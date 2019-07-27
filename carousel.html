@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <!-- 引入4个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container px-0">
+       <ul id="carousel1" class="carousel_inner list-unstyled">
+           <li><a href="#"><img class="w-100 h-100" src="imgs/carousel-1.jpg" alt=""/></a></li>
+           <li><a href="#"><img class="w-100 h-100" src="imgs/carousel-2.jpg" alt=""/></a></li>
+           <li><a href="#"><img class="w-100 h-100" src="imgs/carousel-3.jpg" alt=""/></a></li>
+           <li><a href="#"><img class="w-100 h-100" src="imgs/carousel-4.jpg" alt=""/></a></li>
+           <li><a href="#"><img class="w-100 h-100" src="imgs/carousel-1.jpg" alt=""/></a></li>
+       </ul>
+       <ul id="indicator1" class="indicator list-unstyled d-flex justify-content-between">
+           <li class="active"></li>
+           <li></li>
+           <li></li>
+           <li></li>
+       </ul>
+    <div id="left1" class="left"></div>
+    <div id="right1" class="right"></div>
+</div>
+   <script src="js/carousel_class.js"></script>
+   <script>
+       //计算每张图片的宽度
+       var width = $(".container").width();
+       var carousel1 = new Carousel(1,width,4,500,true);
+       carousel1.init();
+       window.onresize = function () {
+        width = $(".container").width();
+        var carousel2 = new Carousel(1,width,4,500,true);
+         carousel2.init();
+         location.reload();
+  }
+
+   </script>
+</body>
+</html>
